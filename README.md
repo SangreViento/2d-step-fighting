@@ -21,5 +21,7 @@ https://opengameart.org/content/black-and-white-shild-and-sword
 
 https://opengameart.org/content/10-basic-rpg-enemies
 
-etc.
+https://opengameart.org/content/oil-painting-landscapes
+
+https://opengameart.org/content/forest-background
 

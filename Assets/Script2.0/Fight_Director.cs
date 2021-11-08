@@ -80,13 +80,13 @@ public class Fight_Director : MonoBehaviour
             
         }
 
-        lf_health_bar.text = "ОЗ " + left_figther.health.ToString(); // Отправляем на экран информацию о здоровье левого бойца
-        rh_health_bar.text = "ОЗ " + right_fighter.health.ToString(); // Отправляем на экран информацию о здоровье правого бойца
+        lf_health_bar.text = "HP " + left_figther.health.ToString(); // Отправляем на экран информацию о здоровье левого бойца
+        rh_health_bar.text = "HP " + right_fighter.health.ToString(); // Отправляем на экран информацию о здоровье правого бойца
        
         if (left_figther.health == 0 && right_fighter.health == 0)
         {
             
-            anonce.text = "Ничья!";
+            anonce.text = "Draw!";
             anonce.enabled = true;
             battle_hud.SetActive(false);
             restart_hud.SetActive(true);
@@ -97,7 +97,7 @@ public class Fight_Director : MonoBehaviour
         {
             //anonce.text = "Победил " + right_fighter.name;
             
-            anonce.text = "Поражение :-(";
+            anonce.text = "You loose";
             anonce.enabled = true;
             battle_hud.SetActive(false);
             restart_hud.SetActive(true);
@@ -106,7 +106,7 @@ public class Fight_Director : MonoBehaviour
         else if (right_fighter.health == 0)
         {
             //anonce.text = "Победил " + left_figther.name;
-            anonce.text = "Победа!";
+            anonce.text = "WIN!";
             anonce.enabled = true;
             battle_hud.SetActive(false);
             restart_hud.SetActive(true);
@@ -115,7 +115,7 @@ public class Fight_Director : MonoBehaviour
         }
         else if (left_figther.health > 0 && right_fighter.health > 0)
         {
-            anonce.text = "Раунд " + round;
+            anonce.text = "Round " + round;
             combat_flag = true;
         }
 

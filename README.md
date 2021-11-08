@@ -11,7 +11,7 @@ Resources link:
 
 Music - https://starfrosch.com/hot-111/artist/punch+deck
 
-Kick sample - https://wav-library.net/
+Kick sample - https://sound-pack.net/download/Sound_06123.mp3
 
 Sprites: 
 
@@ -21,4 +21,5 @@ https://opengameart.org/content/black-and-white-shild-and-sword
 
 https://opengameart.org/content/10-basic-rpg-enemies
 
+etc.
 

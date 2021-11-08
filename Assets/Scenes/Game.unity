@@ -396,7 +396,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0411\u043B\u043E\u043A \u043D\u043E\u0433"
+  m_Text: Foot block
 --- !u!222 &144742729
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -440,7 +440,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -176.54504, y: -41.447975}
+  m_AnchoredPosition: {x: -176.54504, y: -45}
   m_SizeDelta: {x: 350, y: 24.05}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &155595256
@@ -564,7 +564,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0423\u0434\u0430\u0440 \u0432 \u0442\u0443\u043B\u043E\u0432\u0438\u0449\u0435"
+  m_Text: Body attack
 --- !u!222 &170886231
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -843,7 +843,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0411\u043B\u043E\u043A \u0442\u0443\u043B\u043E\u0432\u0438\u0449\u0430"
+  m_Text: Body block
 --- !u!222 &339690031
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1661,7 +1661,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0423\u0434\u0430\u0440 \u0432 \u0433\u043E\u043B\u043E\u0432\u0443"
+  m_Text: Head attack
 --- !u!222 &880392018
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2059,7 +2059,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 155.69496, y: -46.015015}
+  m_AnchoredPosition: {x: 155.69496, y: -45}
   m_SizeDelta: {x: 350, y: 24.05}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1210730237
@@ -2262,7 +2262,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0423\u0434\u0430\u0440 \u0432 \u043D\u043E\u0433\u0438"
+  m_Text: Foot attack
 --- !u!222 &1217817585
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2700,7 +2700,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0411\u043B\u043E\u043A \u0433\u043E\u043B\u043E\u0432\u044B"
+  m_Text: Head block
 --- !u!222 &1504777109
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3172,9 +3172,9 @@ RectTransform:
   m_Father: {fileID: 400649136}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 545, y: 257.68}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -119, y: -128}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1562061172

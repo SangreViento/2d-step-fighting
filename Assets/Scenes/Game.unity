@@ -175,12 +175,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objects:
-  - {fileID: 8814823096498005614, guid: 36e07db2069da6045be9121495926dce, type: 3}
-  - {fileID: 7611618952701821703, guid: 5728cd1ed7f66864bb73b51e7a5b9171, type: 3}
   - {fileID: 7477372674300899849, guid: 744549c674b64cc49a5463c6d2de1fb6, type: 3}
   - {fileID: 4084156906884008178, guid: 3b968dc2a3a4c2943967342f4aca1601, type: 3}
-  - {fileID: 7548396604072738536, guid: 1a84d2bc5faa9ea47adfc3c88c381013, type: 3}
   - {fileID: 6281960919582352643, guid: 0822116937e09d04a91155fec423d56e, type: 3}
+  - {fileID: 8814823096498005614, guid: 36e07db2069da6045be9121495926dce, type: 3}
+  - {fileID: 7548396604072738536, guid: 1a84d2bc5faa9ea47adfc3c88c381013, type: 3}
+  - {fileID: 7611618952701821703, guid: 5728cd1ed7f66864bb73b51e7a5b9171, type: 3}
   left_figther: {fileID: 0}
   right_fighter: {fileID: 0}
   lf_health_bar: {fileID: 1214808150}

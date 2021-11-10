@@ -38,15 +38,22 @@ public class Fight_Director : MonoBehaviour
     public GameObject battle_hud;
     public GameObject restart_hud;
 
-    public bool combat_flag;
+    int left_hero_index;
+    int right_hero_index;
 
+    public bool combat_flag;
+    private void Awake()
+    {
+        left_hero_index = hero.left_hero;
+        right_hero_index = hero.right_hero;
+    }
     void Start()
     {
         combat_flag = true;
         battle_hud.SetActive(true);
         restart_hud.SetActive(false);   
-        GameObject lf = Instantiate(objects[0]); // Динамически создаем объект левого бойца
-        GameObject rf = Instantiate(objects[2]); // Динамически создаем объект правого бойца
+        GameObject lf = Instantiate(objects[left_hero_index]); // Динамически создаем объект левого бойца
+        GameObject rf = Instantiate(objects[right_hero_index]); // Динамически создаем объект правого бойца
 
         lf.transform.position = new Vector3(-6.5f, -0.5f, 0f); // устанавливаем координаты левого бойца
         rf.transform.position = new Vector3(6.5f, -0.5f, 0f); // устанавливаем координаты правого бойца

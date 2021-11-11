@@ -68,8 +68,8 @@ public class Fight_Director : MonoBehaviour
         left_cp.controlled_fighter = left_figther; // Передаем панелям управления героями ссылки на скрипты управления
         right_cp.controlled_fighter = right_fighter;
 
-        fight_btn.onClick.AddListener(Fight); // Метод Fight данного класса будет вызван при нажатии на кнопку fight_btn
-        restart_btn.onClick.AddListener(Restart_Fight);
+        //fight_btn.onClick.AddListener(Fight); // Метод Fight данного класса будет вызван при нажатии на кнопку fight_btn
+       // restart_btn.onClick.AddListener(Restart_Fight);
 
         lifebar_left.watched_figther = left_figther;
         lifebar_right.watched_figther = right_fighter;
@@ -82,7 +82,6 @@ public class Fight_Director : MonoBehaviour
         {
             if (combat_flag)
             {
-                Fight();
             }
             
         }
@@ -127,33 +126,5 @@ public class Fight_Director : MonoBehaviour
         }
 
     }
-    void Fight()
-    {
-        right_fighter.AI_SetAttZone();
-        right_fighter.AI_SetDefZone();
 
-        left_figther.Make_Attack(); // Метод данного класса вызывает метод у бойца класса Fighter
-        right_fighter.Make_Attack(); // Метод данного класса вызывает метод у бойца класса Fighter
-
-        left_figther.ResetDefAttZone(); // Метод данного класса вызывает метод у бойца класса Fighter
-        right_fighter.ResetDefAttZone(); // Метод данного класса вызывает метод у бойца класса Fighter
-
-        left_cp.Reset_btn();
-        right_cp.Reset_btn();
-
-        round++;
-    }
-    void Restart_Fight()
-    {
-        round = 1;
-        combat_flag = true;
-        left_figther.health = 100;
-        right_fighter.health = 100;
-        left_figther.ResetDefAttZone();
-        right_fighter.ResetDefAttZone();
-        left_cp.Reset_btn();
-        right_cp.Reset_btn();
-        battle_hud.SetActive(true);
-        restart_hud.SetActive(false);
-    }
 }

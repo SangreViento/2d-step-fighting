@@ -35,8 +35,10 @@ public class store_pick : MonoBehaviour
             hero.left_hero = 4;
         else if (go.name == "Skeleton")
             hero.left_hero = 5;
+        else if (go.name == "Knight")
+            hero.left_hero = 6;
 
-        hero.right_hero = (int)Random.Range(0, 5);
+        hero.right_hero = (int)Random.Range(0, 6);
         hero.name_of_hero = go.name;
     }
 }

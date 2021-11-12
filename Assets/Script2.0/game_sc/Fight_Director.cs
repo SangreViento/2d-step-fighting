@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class Fight_Director : MonoBehaviour
 {
     public GameObject[] objects;
-    enum Target_Zone // Перечисление мест атаки и защиты закодированных в числовом формате 
+    enum Target_Zone // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ 
     {
         Unselected = 0,
         Head = 1,
@@ -14,16 +14,16 @@ public class Fight_Director : MonoBehaviour
 
     int round = 1;
 
-    // мд - модификатор доступа, тип - тип переменной, имя переменной (ссылка на объект) 
+    // пїЅпїЅ - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ - пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ) 
 
-    // мд  // тип  // имя переменной
-    public Fighter left_figther; // Создаем переменную типа Figther для левого игрока 
-    public Fighter right_fighter; // Создаем переменную типа Figther для правого игрока 
+    // пїЅпїЅ  // пїЅпїЅпїЅ  // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    public Fighter left_figther; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ Figther пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ 
+    public Fighter right_fighter; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ Figther пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ 
 
-    public Text lf_health_bar; // Переменная типа Text для отображения здоровья левого бойца
-    public Text rh_health_bar; // Переменная типа Text для отображения здоровья правого бойца
+    public Text lf_health_bar; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ Text пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+    public Text rh_health_bar; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ Text пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 
-    public Button fight_btn; // Переменная типа Button для доступа к кнопке атака
+    public Button fight_btn; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ Button пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     public Button restart_btn;
 
     public lifebar_control lifebar_left;
@@ -31,7 +31,7 @@ public class Fight_Director : MonoBehaviour
     
 
     public cp_data left_cp;
-    public cp_data right_cp;
+
 
     public Text anonce;
 
@@ -42,6 +42,7 @@ public class Fight_Director : MonoBehaviour
     int right_hero_index;
 
     public bool combat_flag;
+
     private void Awake()
     {
         left_hero_index = hero.left_hero;
@@ -52,42 +53,33 @@ public class Fight_Director : MonoBehaviour
         combat_flag = true;
         battle_hud.SetActive(true);
         restart_hud.SetActive(false);   
-        GameObject lf = Instantiate(objects[left_hero_index]); // Динамически создаем объект левого бойца
-        GameObject rf = Instantiate(objects[right_hero_index]); // Динамически создаем объект правого бойца
+        GameObject lf = Instantiate(objects[left_hero_index]); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+        GameObject rf = Instantiate(objects[right_hero_index]); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 
-        lf.transform.position = new Vector3(-6.5f, -0.5f, 0f); // устанавливаем координаты левого бойца
-        rf.transform.position = new Vector3(6.5f, -0.5f, 0f); // устанавливаем координаты правого бойца
-        rf.transform.rotation = Quaternion.Euler(0f,180f,0f); // разворачиваем правого бойца на 180 градусов
+        lf.transform.position = new Vector3(-6.5f, -0.5f, 0f); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+        rf.transform.position = new Vector3(6.5f, -0.5f, 0f); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+        rf.transform.rotation = Quaternion.Euler(0f,180f,0f); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ 180 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
-        left_figther = lf.GetComponent<Fighter>(); // достаем компонент Fighter из игрового объекта для взаимодействия со скриптом левого бойца
-        right_fighter = rf.GetComponent<Fighter>(); // достаем компонент Fighter из игрового объекта для взаимодействия со скриптом правого бойца
+        left_figther = lf.GetComponent<Fighter>(); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ Fighter пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+        right_fighter = rf.GetComponent<Fighter>(); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ Fighter пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 
-        left_figther.enemy = right_fighter; // Назначаем бойцов врагами друг другу
+        left_figther.enemy = right_fighter; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         right_fighter.enemy = left_figther;
 
-        left_cp.controlled_fighter = left_figther; // Передаем панелям управления героями ссылки на скрипты управления
-        right_cp.controlled_fighter = right_fighter;
+        left_cp.controlled_fighter = left_figther; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
-        //fight_btn.onClick.AddListener(Fight); // Метод Fight данного класса будет вызван при нажатии на кнопку fight_btn
-       // restart_btn.onClick.AddListener(Restart_Fight);
 
         lifebar_left.watched_figther = left_figther;
         lifebar_right.watched_figther = right_fighter;
+
+        fight_btn.onClick.AddListener(Fight);
     }
 
 
     void Update()
     {
-        if (Input.GetKeyDown("space"))
-        {
-            if (combat_flag)
-            {
-            }
-            
-        }
-
-        lf_health_bar.text = "HP " + left_figther.health.ToString(); // Отправляем на экран информацию о здоровье левого бойца
-        rh_health_bar.text = "HP " + right_fighter.health.ToString(); // Отправляем на экран информацию о здоровье правого бойца
+        lf_health_bar.text = "HP " + left_figther.health.ToString(); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+        rh_health_bar.text = "HP " + right_fighter.health.ToString(); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
        
         if (left_figther.health == 0 && right_fighter.health == 0)
         {
@@ -101,7 +93,7 @@ public class Fight_Director : MonoBehaviour
         }
         else if (left_figther.health == 0)
         {
-            //anonce.text = "Победил " + right_fighter.name;
+            //anonce.text = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ " + right_fighter.name;
             
             anonce.text = "You loose";
             anonce.enabled = true;
@@ -111,7 +103,7 @@ public class Fight_Director : MonoBehaviour
         }
         else if (right_fighter.health == 0)
         {
-            //anonce.text = "Победил " + left_figther.name;
+            //anonce.text = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ " + left_figther.name;
             anonce.text = "WIN!";
             anonce.enabled = true;
             battle_hud.SetActive(false);
@@ -126,5 +118,16 @@ public class Fight_Director : MonoBehaviour
         }
 
     }
+    void Fight()
+
+    {
+        left_cp.TransmiteFlags();
+        right_fighter.Attack(); 
+        left_figther.Attack();
+        left_figther.clearActions();
+        right_fighter.clearActions();
+            
+    }
+
 
 }

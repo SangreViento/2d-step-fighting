@@ -148,11 +148,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   attack_power: 15
-  armor: 0
+  armor: 10
   crit: 0
+  ap: 2
   enemy: {fileID: 0}
-  Def_Zone: 0
-  Att_Zone: 0
 --- !u!82 &-5641875106069841220
 AudioSource:
   m_ObjectHideFlags: 0

@@ -122,11 +122,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   attack_power: 15
-  armor: 0
+  armor: 10
   crit: 0
+  ap: 2
   enemy: {fileID: 0}
-  Def_Zone: 0
-  Att_Zone: 0
 --- !u!61 &7900161747813333131
 BoxCollider2D:
   m_ObjectHideFlags: 0

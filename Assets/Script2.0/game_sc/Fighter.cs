@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 public class Fighter : MonoBehaviour
 {
-    public int health = 0; // В переменной health типа int сохраняем значение 100 равное изначальному количеству HP 
-    public int attack_power = 0; // В переменной strike_power типа int сохраняем значение 5 равное силе удара
-    public int armor = 0; // Броня персонажа
-    public int crit = 0; // Шанс критического урона в процентах крит Х2
-    public int ap = 2; // Очки действий
+    public int health = 0; // пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ health пїЅпїЅпїЅпїЅ int пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 100 пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ HP 
+    public int attack_power = 0; // пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ strike_power пїЅпїЅпїЅпїЅ int пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 5 пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+    public int armor = 0; // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    public int crit = 0; // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ2
+    public int ap = 2; // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     
     public Fighter enemy;
 
@@ -53,5 +53,51 @@ public class Fighter : MonoBehaviour
     public void reciveFlags(Dictionary<string, bool> flags)
     {
         actions = flags;
+    }
+    int checkCrit()
+    {
+        if (Random.Range(1,100) <= crit)
+        {
+            return 2;
+        }
+        else
+        {
+            return 1;
+        }
+    }
+
+    public void Attack()
+    {
+        enemy.Defence(actions["AHead"], actions["ABody"], actions["AFoot"], attack_power);
+    }
+
+    public void Defence(bool ah, bool ab, bool af, int dmg)
+    {
+        if (ah && actions["DHead"] != true)
+        {
+            if ((health - (dmg*checkCrit() - armor))>=0)
+            health -= (dmg*checkCrit() - armor);
+            else
+            health = 0;
+            Debug.Log("Atack power " + (dmg*checkCrit()).ToString() + " Blocked " + armor.ToString() + " Demage " + (dmg*checkCrit() - armor).ToString());
+        }
+        
+        if (ab && actions["DBody"]!= true)
+        {
+            if ((health - (dmg*checkCrit() - armor))>=0)
+            health -= (dmg*checkCrit() - armor);
+            else
+            health = 0;
+            Debug.Log("Atack power " + (dmg*checkCrit()).ToString() + " Blocked " + armor.ToString() + " Demage " + (dmg*checkCrit() - armor).ToString());
+        }
+
+        if (af && actions["DFoot"]!= true)
+        {
+            if ((health - (dmg*checkCrit() - armor))>=0)
+            health -= (dmg*checkCrit() - armor);
+            else
+            health = 0;
+            Debug.Log("Atack power " + (dmg*checkCrit()).ToString() + " Blocked " + armor.ToString() + " Demage " + (dmg*checkCrit() - armor).ToString());
+        }
     }
 }

@@ -203,7 +203,10 @@ public class cp_data : MonoBehaviour
         }
     }
 
-
+    public void TransmiteFlags()
+    {
+        controlled_fighter.reciveFlags(actions);
+    }
 
     public void clearActions()
     {

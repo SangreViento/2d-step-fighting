@@ -4,13 +4,6 @@ using UnityEngine.UI;
 public class Fight_Director : MonoBehaviour
 {
     public GameObject[] objects;
-    enum Target_Zone // ������������ ���� ����� � ������ �������������� � �������� ������� 
-    {
-        Unselected = 0,
-        Head = 1,
-        Body = 2,
-        Foot = 3
-    }
 
     int round = 1;
 
@@ -18,7 +11,7 @@ public class Fight_Director : MonoBehaviour
 
     // ��  // ���  // ��� ����������
     public Fighter left_figther; // ������� ���������� ���� Figther ��� ������ ������ 
-    public Fighter right_fighter; // ������� ���������� ���� Figther ��� ������� ������ 
+    public Fighter right_figther; // ������� ���������� ���� Figther ��� ������� ������ 
 
     public Text lf_health_bar; // ���������� ���� Text ��� ����������� �������� ������ �����
     public Text rh_health_bar; // ���������� ���� Text ��� ����������� �������� ������� �����
@@ -28,10 +21,8 @@ public class Fight_Director : MonoBehaviour
 
     public lifebar_control lifebar_left;
     public lifebar_control lifebar_right;
-    
 
     public cp_data left_cp;
-
 
     public Text anonce;
 
@@ -41,8 +32,6 @@ public class Fight_Director : MonoBehaviour
     int left_hero_index;
     int right_hero_index;
 
-    public bool combat_flag;
-
     private void Awake()
     {
         left_hero_index = hero.left_hero;
@@ -50,7 +39,6 @@ public class Fight_Director : MonoBehaviour
     }
     void Start()
     {
-        combat_flag = true;
         battle_hud.SetActive(true);
         restart_hud.SetActive(false);   
         GameObject lf = Instantiate(objects[left_hero_index]); // ����������� ������� ������ ������ �����
@@ -61,35 +49,34 @@ public class Fight_Director : MonoBehaviour
         rf.transform.rotation = Quaternion.Euler(0f,180f,0f); // ������������� ������� ����� �� 180 ��������
 
         left_figther = lf.GetComponent<Fighter>(); // ������� ��������� Fighter �� �������� ������� ��� �������������� �� �������� ������ �����
-        right_fighter = rf.GetComponent<Fighter>(); // ������� ��������� Fighter �� �������� ������� ��� �������������� �� �������� ������� �����
+        right_figther = rf.GetComponent<Fighter>(); // ������� ��������� Fighter �� �������� ������� ��� �������������� �� �������� ������� �����
 
-        left_figther.enemy = right_fighter; // ��������� ������ ������� ���� �����
-        right_fighter.enemy = left_figther;
+        left_figther.enemy = right_figther; // ��������� ������ ������� ���� �����
+        right_figther.enemy = left_figther;
 
         left_cp.controlled_fighter = left_figther; // �������� ������� ���������� ������� ������ �� ������� ����������
 
 
         lifebar_left.watched_figther = left_figther;
-        lifebar_right.watched_figther = right_fighter;
+        lifebar_right.watched_figther = right_figther;
 
         fight_btn.onClick.AddListener(Fight);
+        restart_btn.onClick.AddListener(Restart);
     }
 
 
     void Update()
     {
         lf_health_bar.text = "HP " + left_figther.health.ToString(); // ���������� �� ����� ���������� � �������� ������ �����
-        rh_health_bar.text = "HP " + right_fighter.health.ToString(); // ���������� �� ����� ���������� � �������� ������� �����
+        rh_health_bar.text = "HP " + right_figther.health.ToString(); // ���������� �� ����� ���������� � �������� ������� �����
        
-        if (left_figther.health == 0 && right_fighter.health == 0)
+        if (left_figther.health == 0 && right_figther.health == 0)
         {
             
             anonce.text = "Draw!";
             anonce.enabled = true;
             battle_hud.SetActive(false);
             restart_hud.SetActive(true);
-            combat_flag = false;
-
         }
         else if (left_figther.health == 0)
         {
@@ -99,22 +86,18 @@ public class Fight_Director : MonoBehaviour
             anonce.enabled = true;
             battle_hud.SetActive(false);
             restart_hud.SetActive(true);
-            combat_flag = false;
         }
-        else if (right_fighter.health == 0)
+        else if (right_figther.health == 0)
         {
             //anonce.text = "������� " + left_figther.name;
             anonce.text = "WIN!";
             anonce.enabled = true;
             battle_hud.SetActive(false);
             restart_hud.SetActive(true);
-            combat_flag = false;
-
         }
-        else if (left_figther.health > 0 && right_fighter.health > 0)
+        else if (left_figther.health > 0 && right_figther.health > 0)
         {
             anonce.text = "Round " + round;
-            combat_flag = true;
         }
 
     }
@@ -122,12 +105,24 @@ public class Fight_Director : MonoBehaviour
 
     {
         left_cp.TransmiteFlags();
-        right_fighter.Attack(); 
+        right_figther.Ai_Prepare_attack();
+        right_figther.Attack(); 
         left_figther.Attack();
         left_figther.clearActions();
-        right_fighter.clearActions();
+        right_figther.clearActions();
             
     }
 
+    void Restart()
+    {
+        left_figther.clearActions();
+        right_figther.clearActions();
+        left_figther.Refresh_stats();
+        right_figther.Refresh_stats();
+        left_cp.resetAP();
+        battle_hud.SetActive(true);
+        restart_hud.SetActive(false);
+
+    }
 
 }

@@ -219,5 +219,9 @@ public class cp_data : MonoBehaviour
         actions["DBody"] = false;
         actions["DFoot"] = false;
     }
+    public void resetAP()
+    {
+        avail_ap = controlled_fighter.ap;
+    }
 }
 

@@ -135,36 +135,25 @@ public class Fighter : MonoBehaviour
     public void Defence(bool ah, bool ab, bool af, int dmg)
     {
         if (ah && actions["DHead"] != true)
-        {
-            StartCoroutine(Damaged_animation());
-            punch_audio.Play();
-            if ((health - (dmg*checkCrit() - armor))>=0)
-            health -= (dmg*checkCrit() - armor);
-            else
-            health = 0;
-            Debug.Log("Atack power " + (dmg*checkCrit()).ToString() + " Blocked " + armor.ToString() + " Demage " + (dmg*checkCrit() - armor).ToString());
-        }
-        
-        if (ab && actions["DBody"]!= true)
-        {
-            StartCoroutine(Damaged_animation());
-            punch_audio.Play();
-            if ((health - (dmg*checkCrit() - armor))>=0)
-            health -= (dmg*checkCrit() - armor);
-            else
-            health = 0;
-            Debug.Log("Atack power " + (dmg*checkCrit()).ToString() + " Blocked " + armor.ToString() + " Demage " + (dmg*checkCrit() - armor).ToString());
-        }
+            ReciveDmg(dmg);
+        if (ab && actions["DBody"] != true)
+            ReciveDmg(dmg);
+        if (af && actions["DFoot"] != true)
+            ReciveDmg(dmg);
+    }
 
-        if (af && actions["DFoot"]!= true)
+    void ReciveDmg(int dmg)
+    {
+        int calc_dmg = dmg*checkCrit()-armor;
+        if (calc_dmg>0)
         {
             punch_audio.Play();
             StartCoroutine(Damaged_animation());
-            if ((health - (dmg*checkCrit() - armor))>=0)
-            health -= (dmg*checkCrit() - armor);
+            
+            if ((health-calc_dmg) >= 0)
+                health -= calc_dmg;
             else
-            health = 0;
-            Debug.Log("Atack power " + (dmg*checkCrit()).ToString() + " Blocked " + armor.ToString() + " Demage " + (dmg*checkCrit() - armor).ToString());
+                health = 0;
         }
     }
 }

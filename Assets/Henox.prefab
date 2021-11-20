@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4084156906884008181}
   - component: {fileID: 7900161747813333131}
   - component: {fileID: 605293329823708240}
+  - component: {fileID: 6358703683262054170}
   m_Layer: 0
   m_Name: Henox
   m_TagString: Untagged
@@ -120,13 +121,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97173a335cfde984cad6173e3a3a381d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  max_hp: 0
+  max_ap: 0
   health: 100
   attack_power: 15
-  armor: 0
+  armor: 5
   crit: 0
+  ap: 2
   enemy: {fileID: 0}
-  Def_Zone: 0
-  Att_Zone: 0
 --- !u!61 &7900161747813333131
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -249,6 +251,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &6358703683262054170
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4084156906884008178}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3c26f6de9cfc9e73c9743b31eb782541, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7401261489649808065
 GameObject:
   m_ObjectHideFlags: 0

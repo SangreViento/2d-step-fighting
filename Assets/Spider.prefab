@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 7477372674300899854}
   - component: {fileID: 3659775603020104304}
   - component: {fileID: 1848609987905273462}
+  - component: {fileID: -2653485160855278210}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Untagged
@@ -332,3 +333,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &-2653485160855278210
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7477372674300899849}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3c26f6de9cfc9e73c9743b31eb782541, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

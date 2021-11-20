@@ -14,21 +14,37 @@ public class Fighter : MonoBehaviour
     public int ap = 2; 
     
     public Fighter enemy;
+    
 
     public Dictionary<string, bool> actions = new Dictionary<string, bool>();
     
     SpriteRenderer appearance;
     Transform pos;
     AudioSource punch_audio;
+    Animator anim;
 
-    private IEnumerator attacked;
-   
-    public IEnumerator Damaged_animation()
+    public IEnumerator Animations(bool attack_anim, bool dmg_anim)
     {
-        appearance.color = Color.red;
-        yield return new WaitForSeconds(0.25f);
-        appearance.color = Color.white;
+        if (attack_anim)
+        {
+            anim.SetBool("atack_perform", true);
+            yield return new WaitForSeconds(0.5f);
+            anim.SetBool("atack_perform", false);
+        }
+        
+        yield return new WaitForSeconds(0.50f);
+
+        if (dmg_anim)
+        {
+            anim.SetBool("dmg_taken", true);
+            appearance.color = Color.red;
+            yield return new WaitForSeconds(0.50f);
+            appearance.color = Color.white;
+            anim.SetBool("dmg_taken", false);
+        }
+        
     }
+   
 
     void Start()
     {
@@ -36,6 +52,7 @@ public class Fighter : MonoBehaviour
         max_ap = ap;
         appearance = GetComponent<SpriteRenderer>();
         punch_audio = GetComponent<AudioSource>();
+        anim = GetComponent<Animator>();
 
         actions.Add("AHead", false);
         actions.Add("ABody", false);
@@ -116,7 +133,7 @@ public class Fighter : MonoBehaviour
     }
     int checkCrit()
     {
-        if (Random.Range(1,100) <= crit)
+        if ((int)Random.Range(1,100) <= crit)
         {
             return 2;
         }
@@ -129,17 +146,22 @@ public class Fighter : MonoBehaviour
     public void Attack()
     {
         enemy.Defence(actions["AHead"], actions["ABody"], actions["AFoot"], attack_power);
-        
     }
 
     public void Defence(bool ah, bool ab, bool af, int dmg)
     {
+        bool dmg_flag = false;
         if (ah && actions["DHead"] != true)
             ReciveDmg(dmg);
         if (ab && actions["DBody"] != true)
             ReciveDmg(dmg);
         if (af && actions["DFoot"] != true)
             ReciveDmg(dmg);
+
+        if (!dmg_flag && actions["AHead"] || actions["ABody"] || actions["AFoot"])
+        {
+            StartCoroutine(Animations(true, false));
+        }
     }
 
     void ReciveDmg(int dmg)
@@ -147,13 +169,24 @@ public class Fighter : MonoBehaviour
         int calc_dmg = dmg*checkCrit()-armor;
         if (calc_dmg>0)
         {
+            // insert animation mode selector
+            if (actions["AHead"] || actions["ABody"] || actions["AFoot"])
+            {
+                StartCoroutine(Animations(true, true));
+            }
+            else
+            {
+                StartCoroutine(Animations(false, true));
+            }
             punch_audio.Play();
-            StartCoroutine(Damaged_animation());
-            
             if ((health-calc_dmg) >= 0)
                 health -= calc_dmg;
             else
                 health = 0;
+        }
+        else
+        {
+            // insert damage block animation
         }
     }
 }

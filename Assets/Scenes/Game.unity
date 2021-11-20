@@ -181,9 +181,9 @@ MonoBehaviour:
   - {fileID: 8814823096498005614, guid: 36e07db2069da6045be9121495926dce, type: 3}
   - {fileID: 7548396604072738536, guid: 1a84d2bc5faa9ea47adfc3c88c381013, type: 3}
   - {fileID: 7611618952701821703, guid: 5728cd1ed7f66864bb73b51e7a5b9171, type: 3}
-  - {fileID: 6281960919582352643, guid: 5a23ea42d44ae05e693af76e36da1420, type: 3}
+  - {fileID: 7954932343791168038, guid: bdbdc2be83159a781b6463d3a843d9a1, type: 3}
   left_figther: {fileID: 0}
-  right_fighter: {fileID: 0}
+  right_figther: {fileID: 0}
   lf_health_bar: {fileID: 1214808150}
   rh_health_bar: {fileID: 1083160214}
   fight_btn: {fileID: 1632855132}
@@ -191,11 +191,9 @@ MonoBehaviour:
   lifebar_left: {fileID: 1210730237}
   lifebar_right: {fileID: 155595256}
   left_cp: {fileID: 593786453}
-  right_cp: {fileID: 0}
   anonce: {fileID: 1819667305}
   battle_hud: {fileID: 1836785862}
   restart_hud: {fileID: 1677798583}
-  combat_flag: 0
 --- !u!114 &57378025
 MonoBehaviour:
   m_ObjectHideFlags: 0

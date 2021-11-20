@@ -2729,7 +2729,7 @@ MonoBehaviour:
         m_MethodName: set_sprite
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 21300000, guid: 8f5f1630effe527c8a31e5d3bf1cbd3c, type: 3}
+          m_ObjectArgument: {fileID: -1384042078990712203, guid: 51e8b2c37a24230c0ba13153ceaa7700, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -2756,7 +2756,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8f5f1630effe527c8a31e5d3bf1cbd3c, type: 3}
+  m_Sprite: {fileID: -1384042078990712203, guid: 51e8b2c37a24230c0ba13153ceaa7700, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
